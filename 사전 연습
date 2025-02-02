@@ -1,0 +1,43 @@
+/*2025 대구fc 선수명단 정리*/
+/*대구fc 명단 테이블 생성*/
+create table 대구FC(
+    선수이름 VARCHAR(10) NOT NULL,
+    등번호 NUMBER NOT NULL,
+    포지션 VARCHAR(2) NOT NULL,
+    키 NUMBER,
+    몸무게 NUMBER
+);
+
+/*테이블이 잘 만들어졌는지 확인*/
+DESCRIBE 대구FC;
+
+/* 테이블 삭제*/
+drop table 대구FC cascade CONSTRAINTS;
+
+/* number에 (5,2) 생성 => 소수점2자리, 5자리 입력*/
+create table 대구FC(
+    선수이름 varchar(10) not null,
+    등번호 number not null,
+    포지션 varchar(2) not null,
+    키 number(5,2),
+    몸무게 number(5,2)
+);
+
+describe 대구FC;
+
+/* 데이터 입력*/
+insert into 대구FC values('오승훈', '21', 'GK', '192', '80');
+
+/* 확인*/
+select * from 대구FC;
+/*기존 만든 테이블에 birthday 칼럼 추가*/
+alter table 대구FC add birthday number(8);
+/*대구FC 테이블 전체 검색*/
+select * from 대구FC;
+
+/*birhday 테이블 추가로 공백이 된 오승훈 선수의 birthday 추가*/
+update 대구FC
+set birthday = 19880630
+where 선수이름 = '오승훈';
+
+select * from 대구FC;
