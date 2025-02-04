@@ -1,0 +1,80 @@
+/*국적이 브라질인 선수의 선수명, 포지션, 국적 검색*/
+select 선수명, 포지션, 국적
+from 대구FC
+where 국적 = '브라질';
+
+/*포지션이 FW인 선수의 선수명, 포지션, 국적 검색*/
+select 선수명, 포지션, 국적
+from 대구FC
+where 포지션 = 'FW';
+
+/*생년월일이 19로 시작하는 선수를 검색 like 함수 사용*/
+select 선수명, 키, 몸무게, 생년월일
+from 대구FC
+where 생년월일 like '19%';
+
+/*생년월일이 김으로 시작하는 선수 검색*/
+select 선수명, 포지션, 생년월일
+from 대구FC
+where 선수명 like '김%';
+
+/*선수명중 재 가 들어가는 선수명과 생년월일 검색*/
+select 선수명, 생년월일
+from 대구FC
+where 선수명 like'%재%';
+
+/*선수명중 황으로 시작하고 원으로 끝나는 선수명 검색*/
+select 선수명, 생년월일
+from 대구FC
+where 선수명 like '황%원'
+
+/*생일이 6월일 선수를 조회*/
+/* _ 4개 : 연도 4자리*/
+/* % 이후는 몇 글자가 와도 상관 없음*/
+select 선수명, 생년월일
+from 대구FC
+where 생년월일 like '%06__';
+/*동일한 결과 출력*/
+select 선수명, 생년월일
+from 대구FC
+where 생년월일 like '____06%';
+
+/*만약 생년월일이 yyyy-mm-dd로 varchar(10)으로 저장되어 있다면*/
+/*-을 문자 그대로 인식하는 6월 선수 검색*/
+select 선수명, 생년월일
+from 대구FC
+where 생년월일 like '____-06-%' escape '-';
+
+/*포지션이 FW이거나 GK 조회*/
+select 선수명, 포지션
+from 대구FC
+where 포지션 in('FW', 'GK');
+
+select 선수명, 포지션
+from 대구FC
+where (포지션 = 'FW' or 포지션 = 'GK');
+
+/*생년월일이 1990년 1월 1일부터 1999년 12월 31일까지인 선수 조회*/
+select 선수명, 생년월일
+from 대구FC
+where 생년월일 between 19900101 and 19991231;
+
+/*생년월일이 1999년 1월 1일부터 1999년 12월 31일이 아닌 선수를 조회*/
+select 선수명, 생년월일
+from 대구FC
+where not (생년월일 between 19900101 and 19991231);
+
+/*포지션이 공격수 이면서 키가 180 이하인 선수를 조회*/
+select 선수명, 포지션, 키
+from 대구FC
+where 포지션 = 'FW' and 키 <=180;
+
+/*포지션이 MF 이거나 키가 190 이상인 선수를 조회*/
+select 선수명, 포지션, 키
+from 대구FC
+where 포지션 = 'MF' or 키 >= 190;
+
+/*포지션이 GK이거나 키가 190이상이 아닌 선수들을 조회*/
+select 선수명, 포지션, 키
+from 대구FC
+where not (포지션 = 'GK' or 키 >=190);
