@@ -1,0 +1,29 @@
+/*선수명, 생년월일 조회*/
+select 선수명, 생년월일
+from 대구FC;
+
+/*선수명을 as를 이용해 이름으로 컬럼명 변경*/
+select 선수명 as 이름
+from 대구FC;
+
+/*선수들 평균 키,몸무게 조사*/
+select avg (키) as 평균_키, avg(몸무게) as 평균_몸무게
+from 대구FC;
+
+/*포지션을 소문자로 변환*/
+select 선수명, lower(포지션)
+from 대구FC;
+
+/*선수명을 성을 제외한 이름만 출력*/
+select substr(선수명,2)
+from 대구FC;
+
+/*선수들 평균 키를 반올림, 소수점 첫 째 자리까지*/
+select round(avg(키), 1) as 평균_키
+from 대구FC;
+/*선수들 평균 키를 버림, 소수점 첫 째 자리까지*/
+select trunc(avg(키), 1) as 평균_키
+from 대구FC;
+/*소수점 이하의 수를 올림하여 반환*/
+select ceil(avg(키)) as 평균_키
+from 대구FC;
