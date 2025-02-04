@@ -1,0 +1,53 @@
+/*대구FC 선수명단을 출력하는 테이블 작성*/
+/*선수명단이 많아 1군 선수들 & 이름, 국적등 특이한 선수들만 작성*/
+
+/*대구FC 테이블 생성*/
+/*선수명 : 최대10자 저장, 반드시 입력*/
+/*등번호 : 숫자필드, 반드시 입력*/
+/*포지션 : 최대 두자(FW,MF,DF,GK), 반드시 입력*/
+/*국적 : 최대 20자 저장, 반드시 입력*/
+/*키, 몸무게 : 숫자필드, 공백가능*/
+/*생년월일 : 8자 입력가능한 숫자필드, 공백가능*/
+create table 대구FC(
+    선수명 varchar(10) not null,
+    등번호 number not null,
+    포지션 varchar(2) not null,
+    국적 varchar(20) not null,
+    키 number,
+    몸무게 number,
+    생년월일 number(8)
+);
+
+/*테이블 조회*/
+describe 대구FC;
+
+
+/*선수명단 삽입*/
+insert into 대구FC values('최영은', 1, 'GK', '대한민국', 189, 78, 19950926);
+insert into 대구FC values('황재원', 2, 'DF', '대한민국', 180, 70, 20020816);
+insert into 대구FC values('정우재', 3, 'DF', '대한민국', 179, 70, 19020628);
+insert into 대구FC values('카이오', 4, 'DF', '브라질', 191, 88, 19980314);
+insert into 대구FC values('요시노', 5, 'MF', '일본', 182, 75, 19941108);
+insert into 대구FC values('김진혁', 7, 'DF', '대한민국', 187, 78, 19930603);
+insert into 대구FC values('이찬동', 8, 'MF', '대한민국', 185, 82, 19930110);
+insert into 대구FC values('에드가', 9, 'FW', '브라질', 191, 87, 19870103);
+insert into 대구FC values('라마스', 10, 'MF', '브라질', 178, 78, 19940413);
+insert into 대구FC values('세징야', 11, 'FW', '브라질', 177, 77, 19891129);
+insert into 대구FC values('박세진', 14, 'FW', '대한민국', 171, 67, 20040319);
+insert into 대구FC values('이원우', 15, 'DF', '대한민국', 191, 81, 20030316);
+insert into 대구FC values('고재현', 17, 'MF', '대한민국', 177, 77, 19990305);
+insert into 대구FC values('정재상', 18, 'FW', '대한민국', 188, 84, 20040525);
+insert into 대구FC values('박대훈', 19, 'FW' ,'대한민국', 175, 74, 19960330);
+insert into 대구FC values('오세훈', 21, 'GK', '대한민국', 192, 80, 19880630);
+insert into 대구FC values('장성원', 22, 'MF', '대한민국', 175, 70, 19970617);
+insert into 대구FC values('오세이', 28, 'FW', '가나', 176, 73, 20050913);
+insert into 대구FC values('박재현', 29, 'DF', '대한민국', 177, 69, 20030916);
+insert into 대구FC values('한태희', 31, 'GK', '대한민국', 196, 90, 20040705);
+insert into 대구FC values('정치인', 32, 'FW', '대한민국', 182, 71, 19970821);
+insert into 대구FC values('이림', 38, 'DF', '대한민국', 180, 72, 20030812);
+insert into 대구FC values('박진영', 40, 'DF', '대한민국', 186, 84, 20020513);
+insert into 대구FC values('김정현', 44, 'MF', '대한민국', 176, 69, 20000609);
+insert into 대구FC values('이용래', 74, 'MF', '대한민국', 175, 71, 19860417);
+
+/*대구FC 테이블 전체 조회*/
+select * from 대구FC;
