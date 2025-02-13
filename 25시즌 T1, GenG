@@ -1,0 +1,37 @@
+create table T1(
+    N_name varchar2(20) not null,
+    Name varchar(20), 
+    position varchar2(20) not null,
+    birthday number(8),
+    most_champion varchar(20) not null,
+    previous_team varchar(20),
+    lck_title varchar(20),
+    worlds_title varchar(20),
+    msi_title varchar(20)
+);
+
+insert into T1 values('Doran', '최현준', 'Top', 20000722, '나르', '한화생명', '4', '', '');
+insert into T1 values('Oner', '문현준', 'JUG', 20021224, '리 신', '', '1', '2', '');
+insert into T1 values('Faker', '이상혁', 'Mid', 19960507, '아지르', '', '10', '5', '');
+insert into T1 values('Gumayusi', '이민형', 'Adc', 20020206, '아펠리오스', '', '1', '2', '');
+insert into T1 values('Keria', '류민석','Sup', 20021014, '노틸러스', 'DRX', '1', '2', '');
+
+select * from T1;
+    
+create table GenG(
+    N_name varchar2(20) not null,
+    Name varchar2(20),
+    position varchar2(20) not null,
+    birthday number(8),
+    most_champion varchar(20) not null,
+    previous_team varchar(20),
+    lck_title varchar(20),
+    worlds_title varchar(20),
+    msi_title varchar(20)
+);
+
+insert into GenG values('Kiin', '김기인', 'Top', 19990528, '레넥톤', 'KT', '1', '', '1');
+insert into GenG values('Canyon', '김건부', 'JUG', 20010618, '리 신', 'DK', '4', '1', '1');
+insert into GenG values('Chovy', '정지훈', 'Mid', 20030303, '아지르', 'HLE', '4', '', '1');
+insert into GenG values('Ruler', '박재혁', 'Adc', 19981229, '이즈리얼', 'JDG', '1', '1', '1');
+insert into GenG values('Druo', '주민규','Sup', 20020204, '라칸', 'BNK', '', '', '');
